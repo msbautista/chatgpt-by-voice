@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/57375735?v=4" />
+    <title>Chatgpt by voice</title>
+</head>
+
+<body>
+    <main class="container text-center pt-5">
+        <h1>Chatgpt by voice</h1>
+        <div class="row pt-5 pb-5">
+            <div class="col">
+                <image src="./openai-icon.png" class="rotate" width="100" height="100" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <button id="recognitionButton" class="btn btn-primary button-rounded">
+                    <span class="material-symbols-outlined">
+                        keyboard_voice
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col" id="userPrompt"></div>
+        </div>
+        <div class="row pt-2">
+            <div class="col" id="chatGptBox"></div>
+        </div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+
+</html>
