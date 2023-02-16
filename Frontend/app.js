@@ -1,18 +1,11 @@
-const chatGptBox = document.getElementById("chatGptBox");
-const userPrompt = document.getElementById("userPrompt");
+const textBox = document.getElementById("textBox");
 
 //Recognition Settings
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
 recognition.lang = "es-US";
 recognition.onresult = result => {
     let text = result.results[0][0].transcript
-    userPrompt.innerHTML = `
-    <div class="card">
-        <div class="card-body bg-dark text-black">
-        User: ${text}
-        </div>
-    </div>
-    `
+    textBox.textContent = `User: ${text}`;
     getChatGptResponse(text);
 };
 
@@ -34,13 +27,7 @@ function getChatGptResponse(text) {
     })
         .then(response => response.json())
         .then(data => {
-            chatGptBox.innerHTML = `
-            <div class="card">
-                <div class="card-body">
-                AI: ${data.text}
-                </div>
-            </div>
-            `
+            textBox.textContent = `AI: ${data.text}`;
             textToSpeech(data.text);
         })
         .catch(error => console.error(error));
